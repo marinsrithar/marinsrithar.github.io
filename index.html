@@ -14,6 +14,7 @@
                 <input type="text" class="player-name" placeholder="Enter player name" required>
             </div>
             <button type="button" id="add-player">Add Player</button>
+            <button type="button" id="remove-player">Remove Last Player</button>
             <button type="submit">Start Game</button>
         </form>
         <div id="prompt-box" class="hidden">
@@ -21,9 +22,11 @@
             <button id="next-prompt">Next Prompt</button>
         </div>
         <div id="add-prompt-box">
-            <label for="new-prompt">Add a new prompt:</label>
-            <input type="text" id="new-prompt">
-            <button id="add-prompt">Add Prompt</button>
+            <div id="prompt-inputs">
+                <input type="text" class="prompt-input" placeholder="Enter new prompt">
+            </div>
+            <button type="button" id="add-new-prompt">Add Prompt</button>
+            <button type="button" id="remove-prompt">Remove Last Prompt</button>
         </div>
     </div>
     <audio id="notification-sound" src="notification.mp3" preload="auto"></audio>

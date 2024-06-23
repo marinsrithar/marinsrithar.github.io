@@ -1,12 +1,14 @@
 const playerForm = document.getElementById('player-form');
 const playerInputs = document.getElementById('player-inputs');
 const addPlayerButton = document.getElementById('add-player');
+const removePlayerButton = document.getElementById('remove-player');
 const promptBox = document.getElementById('prompt-box');
 const promptText = document.getElementById('prompt-text');
 const nextPromptButton = document.getElementById('next-prompt');
 const addPromptBox = document.getElementById('add-prompt-box');
-const newPromptInput = document.getElementById('new-prompt');
-const addPromptButton = document.getElementById('add-prompt');
+const promptInputs = document.getElementById('prompt-inputs');
+const addNewPromptButton = document.getElementById('add-new-prompt');
+const removePromptButton = document.getElementById('remove-prompt');
 const notificationSound = document.getElementById('notification-sound');
 
 let players = [];
@@ -283,6 +285,13 @@ addPlayerButton.addEventListener('click', function() {
     newInput.focus();
 });
 
+removePlayerButton.addEventListener('click', function() {
+    const playerInputsCollection = playerInputs.getElementsByClassName('player-name');
+    if (playerInputsCollection.length > 1) {
+        playerInputsCollection[playerInputsCollection.length - 1].remove();
+    }
+});
+
 playerForm.addEventListener('submit', function(event) {
     event.preventDefault();
     players = Array.from(document.querySelectorAll('.player-name')).map(input => input.value.trim());
@@ -297,12 +306,19 @@ playerForm.addEventListener('submit', function(event) {
 
 nextPromptButton.addEventListener('click', showNextPrompt);
 
-addPromptButton.addEventListener('click', function() {
-    const newPrompt = newPromptInput.value.trim();
-    if (newPrompt) {
-        prompts.push(newPrompt);
-        newPromptInput.value = '';
-        alert('Prompt added!');
+addNewPromptButton.addEventListener('click', function() {
+    const newInput = document.createElement('input');
+    newInput.type = 'text';
+    newInput.className = 'prompt-input';
+    newInput.placeholder = 'Enter new prompt';
+    promptInputs.appendChild(newInput);
+    newInput.focus();
+});
+
+removePromptButton.addEventListener('click', function() {
+    const promptInputsCollection = promptInputs.getElementsByClassName('prompt-input');
+    if (promptInputsCollection.length > 1) {
+        promptInputsCollection[promptInputsCollection.length - 1].remove();
     }
 });
 

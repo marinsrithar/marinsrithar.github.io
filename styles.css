@@ -29,3 +29,10 @@ button {
     margin-top: 10px;
     cursor: pointer;
 }
+
+input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+}
