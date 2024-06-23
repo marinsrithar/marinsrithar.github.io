@@ -1,0 +1,11 @@
+Take a drink
+$p takes a drink
+The person to your left takes a drink
+Tell a joke. If no one laughs, take a drink
+Anyone wearing red takes a drink
+Choose two people to take a drink
+Everyone with glasses takes a drink
+The tallest person drinks
+The shortest person drinks
+$p and $p have to drink
+Make a rule
