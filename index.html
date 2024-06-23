@@ -10,8 +10,10 @@
     <div class="container">
         <h1>Drinking Game</h1>
         <form id="player-form">
-            <label for="player-names">Enter player names (comma separated):</label>
-            <input type="text" id="player-names" required>
+            <div id="player-inputs">
+                <input type="text" class="player-name" placeholder="Enter player name" required>
+            </div>
+            <button type="button" id="add-player">Add Player</button>
             <button type="submit">Start Game</button>
         </form>
         <div id="prompt-box" class="hidden">
