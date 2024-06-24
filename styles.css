@@ -1,38 +1,89 @@
+/* Main page styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
 }
 
+.main-container {
+    text-align: center;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 10px 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 20px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Drinking game styles */
 .container {
     text-align: center;
     background-color: white;
-    padding: 20px;
+    padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.hidden {
-    display: none;
-}
-
-#prompt-box {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
 }
 
+#prompt-box.hidden, #add-prompt-box.hidden, #prompt-inputs.hidden, #player-form.hidden {
+    display: none;
+}
+
 button {
+    display: block;
+    margin: 10px auto;
     padding: 10px 20px;
-    margin-top: 10px;
+    font-size: 16px;
     cursor: pointer;
 }
 
-input {
-    display: block;
-    margin: 10px auto;
+input[type="text"] {
     padding: 10px;
+    margin: 5px 0;
+    font-size: 16px;
     width: 80%;
+    max-width: 300px;
+    display: block; /* Ensure the inputs appear underneath each other */
+}
+
+/* Return button styles */
+.return-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.return-button:hover {
+    background-color: #0056b3;
 }

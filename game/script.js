@@ -303,7 +303,7 @@ playerForm.addEventListener('submit', function(event) {
         alert('Please enter at least 2 players.');
         return;
     }
-    // Hide player form and show prompts
+    // Hide player form and buttons, show prompts
     playerForm.classList.add('hidden');
     promptBox.classList.remove('hidden');
     addPromptBox.classList.add('hidden'); // Hide prompt add/remove box after game starts
