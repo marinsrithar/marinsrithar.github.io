@@ -303,13 +303,34 @@ playerForm.addEventListener('submit', function(event) {
         alert('Please enter at least 2 players.');
         return;
     }
+    // Hide player form and show prompts
     playerForm.classList.add('hidden');
     promptBox.classList.remove('hidden');
+    addPromptBox.classList.add('hidden'); // Hide prompt add/remove box after game starts
+    promptInputs.classList.add('hidden'); // Hide new prompt text box after game starts
     showNextPrompt();
 });
 
 // Event listener for showing the next prompt
 nextPromptButton.addEventListener('click', showNextPrompt);
+
+// Event listener for adding a new prompt
+addNewPromptButton.addEventListener('click', function() {
+    const newInput = document.createElement('input');
+    newInput.type = 'text';
+    newInput.className = 'prompt-input';
+    newInput.placeholder = 'Enter new prompt';
+    promptInputs.appendChild(newInput);
+    newInput.focus();
+});
+
+// Event listener for removing the last added prompt
+removePromptButton.addEventListener('click', function() {
+    const promptInputsCollection = promptInputs.getElementsByClassName('prompt-input');
+    if (promptInputsCollection.length > 1) {
+        promptInputsCollection[promptInputsCollection.length - 1].remove();
+    }
+});
 
 // Function to show the next prompt
 function showNextPrompt() {
