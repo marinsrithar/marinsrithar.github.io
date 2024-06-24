@@ -1,3 +1,4 @@
+// Select elements from the DOM
 const playerForm = document.getElementById('player-form');
 const playerInputs = document.getElementById('player-inputs');
 const addPlayerButton = document.getElementById('add-player');
@@ -275,6 +276,7 @@ let prompts = [
 "$p must act out a scene from a movie"
 ];
 
+// Event listener for adding player input field
 addPlayerButton.addEventListener('click', function() {
     const newInput = document.createElement('input');
     newInput.type = 'text';
@@ -285,6 +287,7 @@ addPlayerButton.addEventListener('click', function() {
     newInput.focus();
 });
 
+// Event listener for removing player input field
 removePlayerButton.addEventListener('click', function() {
     const playerInputsCollection = playerInputs.getElementsByClassName('player-name');
     if (playerInputsCollection.length > 1) {
@@ -292,6 +295,7 @@ removePlayerButton.addEventListener('click', function() {
     }
 });
 
+// Event listener for submitting player names and starting the game
 playerForm.addEventListener('submit', function(event) {
     event.preventDefault();
     players = Array.from(document.querySelectorAll('.player-name')).map(input => input.value.trim());
@@ -304,24 +308,10 @@ playerForm.addEventListener('submit', function(event) {
     showNextPrompt();
 });
 
+// Event listener for showing the next prompt
 nextPromptButton.addEventListener('click', showNextPrompt);
 
-addNewPromptButton.addEventListener('click', function() {
-    const newInput = document.createElement('input');
-    newInput.type = 'text';
-    newInput.className = 'prompt-input';
-    newInput.placeholder = 'Enter new prompt';
-    promptInputs.appendChild(newInput);
-    newInput.focus();
-});
-
-removePromptButton.addEventListener('click', function() {
-    const promptInputsCollection = promptInputs.getElementsByClassName('prompt-input');
-    if (promptInputsCollection.length > 1) {
-        promptInputsCollection[promptInputsCollection.length - 1].remove();
-    }
-});
-
+// Function to show the next prompt
 function showNextPrompt() {
     if (prompts.length === 0) {
         promptText.textContent = 'No prompts available.';
@@ -341,6 +331,7 @@ function showNextPrompt() {
     notificationSound.play();
 }
 
+// Function to get unique random players
 function getUniquePlayers(count) {
     const shuffledPlayers = players.sort(() => 0.5 - Math.random());
     return shuffledPlayers.slice(0, count);
