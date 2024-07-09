@@ -1,1 +1,31 @@
-truth or dare
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truth or Dare Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Truth or Dare Game</h1>
+        <form id="player-form">
+            <div id="player-inputs">
+                <input type="text" class="player-name" placeholder="Enter player name" required>
+            </div>
+            <button type="button" id="add-player">Add Player</button>
+            <button type="button" id="remove-player">Remove Last Player</button>
+            <button type="submit">Start Game</button>
+        </form>
+
+        <div id="game-section" class="hidden">
+            <h2 id="current-player"></h2>
+            <button id="truth-button">Truth</button>
+            <button id="dare-button">Dare</button>
+            <p id="prompt"></p>
+            <button id="next-player" class="hidden">Next Player</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
