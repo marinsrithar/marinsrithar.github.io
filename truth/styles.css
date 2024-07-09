@@ -42,3 +42,20 @@ input.player-name {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
+/* Return button styles */
+.return-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.return-button:hover {
+    background-color: #0056b3;
+}
