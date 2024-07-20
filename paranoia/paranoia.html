@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paranoia Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <a href="../index.html" id="return-button">Return</a>
+        <div id="home-screen" class="screen active">
+            <h1>Paranoia Game</h1>
+            <input type="text" id="player-name" placeholder="Enter your name">
+            <button onclick="addPlayer()">Join Game</button>
+            <ul id="player-list"></ul>
+            <button onclick="startGame()">Start Game</button>
+        </div>
+        <div id="game-screen" class="screen hidden">
+            <h1 id="current-player"></h1>
+            <div id="question-phase">
+                <input type="text" id="question" placeholder="Whisper a question">
+                <input type="text" id="answerer" placeholder="Who answers?">
+                <button onclick="whisperQuestion()">Submit Question</button>
+            </div>
+            <div id="answer-phase" class="hidden">
+                <p id="answerer-name"></p>
+                <input type="text" id="answer" placeholder="Your answer">
+                <button onclick="answerQuestion()">Submit Answer</button>
+            </div>
+            <div id="reveal-phase" class="hidden">
+                <p id="revealed-answer"></p>
+                <button onclick="revealQuestion()">Reveal Question</button>
+                <button onclick="nextTurn()">Next Turn</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
