@@ -1,0 +1,80 @@
+/* General Styles */
+body {
+    background-color: #3A0CA3; /* Dark purple background */
+    color: #E5E5E5; /* Light text */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Banner */
+.banner {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 2px 2px 5px black;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+/* Card Styles */
+.card {
+    background-color: #2C056F; /* Darker purple background */
+    color: #E5E5E5; /* Light text */
+    border: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-title {
+    color: #22BFCF; /* Neon cyan for titles */
+}
+
+.card-text {
+    color: #E5E5E5; /* Light text for body */
+}
+
+.btn-primary {
+    background-color: #22BFCF; /* Neon cyan buttons */
+    border-color: #22BFCF;
+}
+
+.btn-primary:hover {
+    background-color: #1AA2B3; /* Slightly darker hover effect */
+    border-color: #1AA2B3;
+}
+
+/* Footer */
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #22BFCF; /* Neon cyan */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

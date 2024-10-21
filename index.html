@@ -3,22 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web Apps</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>5am Group</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <div class="main-container">
-        <h1>Welcome to My Web Apps</h1>
-        <nav>
-            <ul>
-                <li><a href="game/game.html">Drinking Game</a></li>
-                <li><a href="truth/index.html">Truth or Dare</a></li>
-                <li><a href="truth2/game.html">Truth or Dare [WIP]</a></li>
-                <li><a href="truth3/game.html">Truth or Dare 2[WIP]</a></li>
-                <li><a href="paranoia/paranoia.html">Paranoia</a></li>
-                <!-- Add more links here for additional web apps -->
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src="img/5amlogo.png" alt="5am Group Logo" width="50" height="50"> 5am Group
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="game/game.html">Drinking Game</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="truth/index.html">Truth or Dare</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="truth2/game.html">Truth or Dare [WIP]</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="truth3/game.html">Truth or Dare 2 [WIP]</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="paranoia/paranoia.html">Paranoia</a>
+                </li>
             </ul>
-        </nav>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <div class="banner">
+        <img src="img/5ambanner.png" alt="Banner" class="img-fluid">
+        <div class="banner-text">
+            <h1>Welcome to 5am Group</h1>
+        </div>
     </div>
+
+    <!-- Main Content -->
+    <div class="container mt-5 pt-5">
+        <h2 class="text-center mb-4">Our Web Apps</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Drinking Game</h5>
+                        <p class="card-text">Play our exciting drinking game app.</p>
+                        <a href="game/game.html" class="btn btn-primary">Go to App</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Truth or Dare</h5>
+                        <p class="card-text">Classic truth or dare fun.</p>
+                        <a href="truth/index.html" class="btn btn-primary">Go to App</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Truth or Dare 2 [WIP]</h5>
+                        <p class="card-text">New features coming soon.</p>
+                        <a href="truth2/game.html" class="btn btn-primary">Go to App</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white mt-5 p-4 text-center">
+        <p>Follow us on</p>
+        <a href="https://www.tiktok.com" class="text-white" target="_blank">
+            <i class="fab fa-tiktok"></i> Tiktok
+        </a> |
+        <a href="https://discord.com" class="text-white" target="_blank">
+            <i class="fab fa-discord"></i> Discord
+        </a>
+        <p>&copy; 2024 5am Group. All rights reserved.</p>
+        <small>Created by DeMariner</small>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- FontAwesome for social media icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
