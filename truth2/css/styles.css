@@ -1,0 +1,142 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-bar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #4CAF50;
+    padding: 10px;
+}
+
+.return-button {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+h1 {
+    color: #333;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.start-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.start-button:hover {
+    background-color: #45a049;
+}
+
+#category-selection {
+    margin: 20px 0;
+}
+
+#category-menu {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: border-color 0.3s ease;
+}
+
+#category-menu:focus {
+    border-color: #4CAF50;
+}
+
+#player-section {
+    margin: 20px 0;
+    text-align: center;
+}
+
+#player-name {
+    padding: 10px;
+    font-size: 16px;
+    width: 60%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: border-color 0.3s ease;
+}
+
+#player-name:focus {
+    border-color: #4CAF50;
+}
+
+#add-player, #truth-btn, #dare-btn, #regenerate-btn, #next-player-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+#add-player {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#add-player:hover {
+    background-color: #45a049;
+}
+
+#truth-btn, #dare-btn, #regenerate-btn, #next-player-btn {
+    background-color: #007BFF;
+    color: white;
+}
+
+#truth-btn:hover, #dare-btn:hover, #regenerate-btn:hover, #next-player-btn:hover {
+    background-color: #0069d9;
+}
+
+#truth-btn:disabled, #dare-btn:disabled, #regenerate-btn:disabled, #next-player-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#player-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+#player-list li {
+    padding: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+#game-controls {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#prompt {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truth or Dare</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="top-bar">
+        <a href="../index.html" class="return-button">Return to Menu</a>
+    </div>
+
+    <div class="container">
+        <h1>Truth or Dare</h1>
+        
+        <div id="player-section">
+            <input type="text" id="player-name" placeholder="Enter player's name">
+            <button id="add-player">Add Player</button>
+            <ul id="player-list"></ul>
+        </div>
+        
+        <div id="start-game-section">
+            <select id="category-menu">
+                <option value="" disabled selected>Select Category</option>
+                <option value="friends">Friends</option>
+                <option value="closeFriends">Close Friends</option>
+                <option value="casual">Casual</option>
+                <option value="extreme">Extreme</option>
+            </select>
+            <button id="start-game" disabled>Start Game</button>
+        </div>
+
+        <div id="game-controls" style="display:none;">
+            <h2 id="current-player-name"></h2>
+            <!-- Keep only one element with id 'prompt' -->
+            <div id="prompt"></div>
+            <button id="truth-btn" disabled>Truth</button>
+            <button id="dare-btn" disabled>Dare</button>
+            <button id="regenerate-btn" disabled>Generate Another</button>
+            <button id="next-player-btn" disabled>Next Player</button>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

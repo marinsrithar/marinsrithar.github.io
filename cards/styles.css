@@ -1,0 +1,95 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.deck-container {
+    position: relative;
+    width: 100px;
+    height: 140px;
+    margin-bottom: 20px;
+    perspective: 1000px;
+}
+
+.deck {
+    width: 100px;
+    height: 140px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.deck::before {
+    content: '';
+    width: 100px;
+    height: 140px;
+    background-color: #2ecc71;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateX(45deg);
+    transform-origin: bottom center;
+}
+
+.deck .card-stack {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-style: preserve-3d;
+}
+
+.deck .card-stack .card-back {
+    width: 100px;
+    height: 140px;
+    background-color: #ffffff;
+    border: 2px solid #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateZ(calc(var(--i) * 2px));
+}
+
+.card-container {
+    width: 100px;
+    height: 140px;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.card {
+    width: 100px;
+    height: 140px;
+    background-color: #ffffff;
+    border: 2px solid #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    animation: drawCard 1s ease forwards;
+    display: none;
+}
+
+@keyframes drawCard {
+    0% {
+        transform: translateZ(0) rotateX(0);
+    }
+    50% {
+        transform: translateZ(150px) rotateX(0);
+    }
+    100% {
+        transform: translateZ(150px) translateY(100px) rotateX(0);
+    }
+}
+
+.card-value {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #2c3e50;
+}
