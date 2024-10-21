@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5am Drinking Game</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="prompt.js"></script>
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <!-- Header (same as main page) -->
+    <header class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">5am Group</a>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <!-- Lobby Section -->
+        <section id="lobby" class="card p-4 mb-4">
+            <h2 class="text-center">Lobby</h2>
+            <div class="mb-3">
+                <label for="player-name" class="form-label">Enter Player Name:</label>
+                <input type="text" id="player-name" class="form-control">
+            </div>
+            <button class="btn btn-primary" id="add-player-btn">Add Player</button>
+            <button class="btn btn-secondary" id="remove-player-btn">Remove Player</button>
+
+            <h3 class="mt-4">Players in Lobby:</h3>
+            <ul id="player-list" class="list-group"></ul>
+
+            <div class="mt-4">
+                <label for="game-mode" class="form-label">Select Game Mode:</label>
+                <select id="game-mode" class="form-select">
+                    <option value="Picolo">Picolo</option>
+                    <option value="Crazy">Crazy</option>
+                    <option value="Party Hard">Party Hard</option>
+                </select>
+            </div>
+
+            <button class="btn btn-success mt-4" id="start-game-btn">Start Game</button>
+        </section>
+
+        <!-- Game Screen -->
+        <section id="game" class="card p-4 d-none">
+            <h2 class="text-center">Current Challenge</h2>
+            <p id="current-prompt" class="lead text-center"></p>
+            <button class="btn btn-info mt-4" id="next-turn-btn">Next Player</button>
+        </section>
+    </main>
+
+    <!-- Footer (same as main page) -->
+    <footer class="bg-dark text-center text-white py-3">
+        <p>
+            <a href="index.html">
+                <img src="../img/5amlogo.png" alt="5am Logo" height="30">
+            </a>
+            <br>Created by DeMariner
+        </p>
+    </footer>
+</body>
+
+</html>
