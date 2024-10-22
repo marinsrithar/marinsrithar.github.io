@@ -1,0 +1,170 @@
+/* Base Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0a0a0f; /* Very dark background */
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.navbar {
+    background-color: #1c1c28; /* Darker grey/blue for the header */
+    border-bottom: 2px solid #3a3a59; /* Slightly lighter border */
+}
+
+.navbar-brand {
+    color: #9a9cff; /* Light purple/blue accent for Omen vibe */
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: #1c1c28;
+    color: #f0f0f0;
+    border-top: 2px solid #3a3a59;
+}
+
+footer a img {
+    filter: brightness(0.8); /* Darken logo */
+}
+
+/* Buttons */
+button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #f0f0f0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+button.btn-success {
+    background-color: #4e5bdc; /* Omen-style purple/blue */
+    border: none;
+}
+
+button.btn-success:hover {
+    background-color: #606bff;
+    box-shadow: 0 0 15px #606bff; /* Glowing effect */
+}
+
+button.btn-primary {
+    background-color: #3c4b99; /* Darker blue */
+    border: none;
+}
+
+button.btn-primary:hover {
+    background-color: #4758b3;
+    box-shadow: 0 0 15px #4758b3;
+}
+
+button.btn-outline-light {
+    background-color: transparent;
+    border: 2px solid #606bff;
+    color: #f0f0f0;
+}
+
+button.btn-outline-light:hover {
+    background-color: #606bff;
+    box-shadow: 0 0 10px #606bff;
+}
+
+button.btn-warning {
+    background-color: #db6d22;
+    border: none;
+}
+
+button.btn-warning:hover {
+    background-color: #e07c3a;
+    box-shadow: 0 0 15px #e07c3a;
+}
+
+button.btn-secondary {
+    background-color: #50576b;
+    border: none;
+}
+
+button.btn-secondary:hover {
+    background-color: #61697f;
+    box-shadow: 0 0 15px #61697f;
+}
+
+/* Forms */
+input, select {
+    background-color: #1c1c28;
+    border: 1px solid #3a3a59;
+    color: #f0f0f0;
+}
+
+input:focus, select:focus {
+    border-color: #606bff;
+    box-shadow: 0 0 8px #606bff;
+}
+
+/* Game Controls */
+#game-controls {
+    background-color: #181a23;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 20px rgba(96, 107, 255, 0.2);
+}
+
+/* Prompts */
+#prompt {
+    font-size: 24px;
+    color: #f0f0f0;
+    font-weight: bold;
+    border: 2px solid #3c4b99;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #1c1c28;
+    transition: background-color 0.3s ease;
+}
+
+#prompt:empty {
+    background-color: transparent;
+    border: none;
+}
+
+/* Player List */
+#player-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+#player-list li {
+    background-color: #1c1c28;
+    color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+#player-list li button {
+    float: right;
+    background-color: #db6d22;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+#player-list li button:hover {
+    background-color: #e07c3a;
+}
+
+/* Miscellaneous */
+h1, h2 {
+    color: #9a9cff;
+}
+
+h1.display-4 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
