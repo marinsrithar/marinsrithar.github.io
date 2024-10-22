@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ring of Fire</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .player-name {
+            color: black;
+        }
+        #cardRule {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+     <!-- Header (same as main page) -->
+    <header class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../img/5amlogo.png" alt="5am Group Logo" width="50" height="50"> 5am Group
+            </a>
+        </div>
+        <h1>Ring of Fire</h1>
+    </header>
+
+    <div class="container mt-4">
+        <div id="lobby" class="mb-4">
+            <h2>Lobby</h2>
+            <div class="input-group mb-3">
+                <input type="text" id="playerName" class="form-control" placeholder="Enter player name">
+                <div class="input-group-append">
+                    <button id="addPlayer" class="btn btn-primary">Add Player</button>
+                </div>
+            </div>
+            <ul id="playerList" class="list-group"></ul>
+            <button id="startGame" class="btn btn-success mt-3">Start Game</button>
+            <button id="rulesButton" class="btn btn-info mt-3" data-toggle="modal" data-target="#rulesModal">Show Rules</button>
+        </div>
+
+        <div id="game" class="d-none">
+            <h2 id="currentTurn" class="text-center"></h2>
+            <div id="cardDisplay" class="text-center mb-4 d-none">
+                <img id="cardImage" src="" alt="Card" class="animate__animated" style="width: 200px; height: auto;">
+            </div>
+            <h3 id="cardRule"></h3>
+            <button id="drawCard" class="btn btn-warning">Draw Card</button>
+            <button id="nextTurn" class="btn btn-info mt-3">Next Player</button>
+            <button id="rulesButtonGame" class="btn btn-info mt-3" data-toggle="modal" data-target="#rulesModal">Show Rules</button>
+        </div>
+
+        <div id="endGame" class="d-none text-center">
+            <h2>Game Over!</h2>
+            <p>All cards have been drawn. Thank you for playing!</p>
+            <button id="restartGame" class="btn btn-primary">Restart Game</button>
+        </div>
+    </div>
+
+    <!-- Rules Modal -->
+<div class="modal fade" id="rulesModal" tabindex="-1" role="dialog" aria-labelledby="rulesModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content omen-modal">
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title" id="rulesModalLabel">Ring of Fire Rules</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul id="rulesList">
+                    <li>Each player takes turns drawing a card from the deck.</li>
+                    <li>Each card has a specific rule associated with it.</li>
+                    <li>Follow the rules of the drawn card (e.g., 2 = You, 3 = Me).</li>
+                    <li>When a King is drawn, the player creates a new rule.</li>
+                    <li>Ace = Waterfall (everyone drinks until the player stops).</li>
+                    <li>2 = You: The player who drew the card chooses someone to drink.</li>
+                    <li>3 = Me: The player who drew the card drinks.</li>
+                    <li>4 = Floor: Everyone must touch the floor; the last to do so drinks.</li>
+                    <li>5 = Guys: All guys drink.</li>
+                    <li>6 = Chicks: All girls drink.</li>
+                    <li>7 = Heaven: Everyone points to the sky; the last to do so drinks.</li>
+                    <li>8 = Mate: The player chooses a mate who must drink whenever they drink.</li>
+                    <li>9 = Bust a Rhyme: The player says a word, and players go around rhyming with it; the first who fails drinks.</li>
+                    <li>10 = Categories: The player names a category (e.g., types of beer), and players must name something in that category; the first to fail drinks.</li>
+                    <li>Jack = Never Have I Ever: The player states something they've never done; anyone who has done it drinks.</li>
+                    <li>Queen = Question Master: The player becomes the Question Master; if anyone answers their questions, they must drink.</li>
+                    <li>King = Create a Rule: The player can create a new rule that must be followed for the rest of the game.</li>
+                </ul>
+                <p>Have fun and drink responsibly!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Footer (same as main page) -->
+    <footer class="bg-dark text-center text-white py-3">
+        <p>
+            <a href="../index.html">
+                <img src="../img/5amlogo.png" alt="5am Logo" height="30">
+            </a>
+            <br>Created by DeMariner
+        </p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

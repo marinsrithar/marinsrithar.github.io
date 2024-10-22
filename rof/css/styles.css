@@ -1,0 +1,34 @@
+body {
+    background-color: #1e1e2f;
+    color: #ffffff;
+}
+
+#cardDisplay {
+    margin-top: 20px;
+}
+
+#playerList {
+    max-height: 200px;
+    overflow-y: auto;
+}
+.rulesList {
+    color: black; /* Set text color to black */
+}
+.omen-modal {
+    background-color: #121212; /* Dark background */
+    color: white; /* Text color for better contrast */
+    border: 2px solid #4B0082; /* Omen purple border */
+    border-radius: 10px; /* Rounded corners for a smoother look */
+}
+
+.omen-modal .modal-body {
+    background-color: #1a1a1a; /* Slightly lighter background for body */
+}
+
+.omen-modal .modal-footer {
+    background-color: #121212; /* Dark background for footer */
+}
+
+.rule-list {
+    color: black; /* Ensures the rules text is black */
+}
