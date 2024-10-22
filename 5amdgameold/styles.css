@@ -1,0 +1,21 @@
+body {
+    background-color: #3A0CA3;
+    color: #E5E5E5;
+}
+
+h1, h2, h3 {
+    color: #E5E5E5;
+}
+
+.card {
+    background-color: #2C056F;
+}
+
+.btn-primary, .btn-secondary, .btn-success, .btn-info {
+    background-color: #22BFCF;
+    border: none;
+}
+
+footer {
+    background-color: #1A0630;
+}
