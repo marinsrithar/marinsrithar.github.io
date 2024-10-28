@@ -30,6 +30,12 @@ body {
     text-shadow: 2px 2px 5px black;
 }
 
+@media (max-width: 768px) {
+    .banner-text {
+        display: none;
+    }
+}
+
 h1 {
     font-size: 3rem;
 }
