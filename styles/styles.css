@@ -7,9 +7,14 @@ body {
 
 /* Banner */
 .banner {
+    margin-top: 56px; /* Adjust as necessary to match the header's height */
     position: relative;
-    text-align: center;
-    color: white;
+}
+
+@media (max-width: 768px) {
+    .banner {
+        margin-top: 70px; /* Slightly increase on mobile for safe spacing */
+    }
 }
 
 .banner img {
