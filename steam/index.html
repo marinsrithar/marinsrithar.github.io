@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Profile Header */
+        .profile-header {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .profile-image {
+            width: 128px;
+            height: 128px;
+            border-radius: 12px;
+            border: 2px solid #8b5cf6;
+            position: relative;
+            overflow: hidden;
+            background-color: #1e293b;
+        }
+
+        .profile-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(139, 92, 246, 0.2);
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .profile-name {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .level-badge {
+            background-color: #1e293b;
+            padding: 0.25rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+        }
+
+        .profile-status {
+            color: #94a3b8;
+            margin-top: 0.5rem;
+        }
+
+        /* Game Section */
+        .game-section {
+            background-color: #1e293b;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .edit-button {
+            color: #60a5fa;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+
+        .game-content {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .game-image {
+            width: 192px;
+            height: 96px;
+            background-color: #334155;
+            border-radius: 8px;
+        }
+
+        .game-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .stat-box {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            color: #94a3b8;
+            font-size: 0.875rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background-color: #1e293b;
+            padding: 1rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .stat-card i {
+            color: #94a3b8;
+            font-size: 1.25rem;
+        }
+
+        /* Badges Section */
+        .badges-section {
+            background-color: #1e293b;
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .badges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .badge {
+            aspect-ratio: 1;
+            background-color: #334155;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .badge i {
+            font-size: 1.5rem;
+            color: #94a3b8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-name {
+                justify-content: center;
+            }
+
+            .game-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .game-stats {
+                justify-content: center;
+            }
+        }
+        footer {
+            text-align: center; /* Center the text */
+        }
+
+        footer a {
+            display: inline-block; /* Make sure the logo is inline-block */
+        }
+        a {
+            color: inherit; /* Inherit color from the parent element */
+            text-decoration: none; /* Remove underline */
+        }
+
+        a:hover,
+        a:focus,
+        a:active {
+            color: inherit; /* Keep the same color on hover, focus, and active states */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <div class="profile-image">
+                <img src="https://avatars.cloudflare.steamstatic.com/c816af1f02b10f0d161bdb9820d60847ffc11a73_full.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="profile-info">
+                <div class="profile-name">
+                    <h1>DeMariner01</h1>
+                    <span class="level-badge">Level 21</span>
+                </div>
+                <p class="profile-status">Collection Agent • 281 XP</p>
+            </div>
+        </div>
+
+        <!-- Favorite Game Section -->
+        <div class="game-section">
+            <div class="section-header">
+                <h2>Favorite Game</h2>
+                <button class="edit-button">Edit Showcase</button>
+            </div>
+            <div class="game-content">
+                <div class="game-image" style="background-color: #334155; border-radius: 8px; overflow: hidden;">
+                    <img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1086940/capsule_184x69.jpg?t=1725654125" alt="Favorite Game Image" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div>
+                    <h3>Baldur's Gate 3</h3>
+                    <div class="game-stats">
+                        <div class="stat-box">
+                            <div class="stat-value">289</div>
+                            <div class="stat-label">Hours played</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">54</div>
+                            <div class="stat-label">Achievements</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <i class="fas fa-trophy"></i>
+                <div>
+                    <div class="stat-value">9</div>
+                    <div class="stat-label">Badges</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-gamepad"></i>
+                <div>
+                    <div class="stat-value">71</div>
+                    <div class="stat-label">
+                        <a href="library.html">Games</a>
+                    </div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-camera"></i>
+                <div>
+                    <div class="stat-value">1</div>
+                    <div class="stat-label">Screenshots</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-comment"></i>
+                <div>
+                    <div class="stat-value">1</div>
+                    <div class="stat-label">Reviews</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Badges Section -->
+        <div class="badges-section">
+            <h2>Badges</h2>
+            <div class="badges-grid">
+                <div class="badge"><i class="fas fa-trophy"></i></div>
+                <div class="badge"><i class="fas fa-bolt"></i></div>
+                <div class="badge"><i class="fas fa-star"></i></div>
+                <div class="badge"><i class="fas fa-medal"></i></div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark text-center text-white py-3">
+        <p class="mb-0">
+            <a href="../index.html" class="d-inline-block">
+                <img src="../img/5amlogo.png" alt="5am Logo" height="30">
+            </a>
+            <br>Created by DeMariner
+        </p>
+    </footer>
+</body>
+</html>

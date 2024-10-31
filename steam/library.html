@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeMariner01 - Games</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .profile-pic {
+            width: 64px;
+            height: 64px;
+            border-radius: 8px;
+            background-color: #1e293b;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 0.5rem;
+        }
+
+        .nav-tab {
+            padding: 0.5rem 1rem;
+            color: #94a3b8;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-tab.active {
+            background-color: #2563eb;
+            color: white;
+        }
+
+        .nav-tab:hover:not(.active) {
+            background-color: #1e293b;
+            color: white;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 0.5rem 1rem;
+            background-color: #1e293b;
+            border: none;
+            border-radius: 6px;
+            color: white;
+        }
+
+        .sort-options {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .sort-button {
+            padding: 0.5rem 1rem;
+            background-color: #1e293b;
+            border: none;
+            border-radius: 6px;
+            color: #94a3b8;
+            cursor: pointer;
+        }
+
+        /* Game List */
+        .game-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .game-card {
+            background-color: #1e293b;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            transition: transform 0.2s ease;
+        }
+
+        .game-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .game-image {
+            width: 240px;
+            height: 120px;
+            background-color: #334155;
+            flex-shrink: 0;
+        }
+
+        .game-info {
+            padding: 1rem;
+            flex: 1;
+        }
+
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .game-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .game-stats {
+            display: flex;
+            gap: 2rem;
+            color: #94a3b8;
+            font-size: 0.875rem;
+        }
+
+        .achievement-bar {
+            height: 4px;
+            background-color: #334155;
+            border-radius: 2px;
+            margin-top: 0.5rem;
+            overflow: hidden;
+        }
+
+        .achievement-progress {
+            height: 100%;
+            background-color: #2563eb;
+        }
+
+        .menu-button {
+            background: none;
+            border: none;
+            color: #94a3b8;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .menu-button:hover {
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .game-card {
+                flex-direction: column;
+            }
+
+            .game-image {
+                width: 100%;
+                height: 160px;
+            }
+
+            .game-stats {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="profile-pic"></div>
+            <h1>DeMariner01</h1>
+            <span style="color: #94a3b8;">» Games</span>
+        </div>
+
+        <div class="nav-tabs">
+            <a href="#" class="nav-tab">Recently Played (14)</a>
+            <a href="#" class="nav-tab active">All Games (189)</a>
+            <a href="#" class="nav-tab">Perfect Games (4)</a>
+            <a href="#" class="nav-tab">Followed (1)</a>
+            <a href="#" class="nav-tab">Reviews (1)</a>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Find a game" class="search-input">
+            <div class="sort-options">
+                <button class="sort-button">Playtime</button>
+                <button class="sort-button">Name</button>
+                <button class="sort-button">Achievement Completion</button>
+            </div>
+        </div>
+
+        <div class="game-list">
+            <!-- Baldur's Gate 3 -->
+            <div class="game-card">
+                <div class="game-image" style="background-image: url('https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1086940/header.jpg?t=1725654125');"></div>
+                <div class="game-info">
+                    <div class="game-header">
+                        <a href="#" class="game-title">Baldur's Gate 3</a>
+                        <button class="menu-button"><i class="fas fa-ellipsis-h"></i></button>
+                    </div>
+                    <div class="game-stats">
+                        <div>TOTAL PLAYED: 288.9 hours</div>
+                        <div>LAST PLAYED: Oct 26</div>
+                        <div>ACHIEVEMENTS: 54/54</div>
+                    </div>
+                    <div class="achievement-bar">
+                        <div class="achievement-progress" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Undecember -->
+            <div class="game-card">
+                <div class="game-image" style="background-image: url('path-to-undecember-image.jpg');"></div>
+                <div class="game-info">
+                    <div class="game-header">
+                        <a href="#" class="game-title">Undecember</a>
+                        <button class="menu-button"><i class="fas fa-ellipsis-h"></i></button>
+                    </div>
+                    <div class="game-stats">
+                        <div>TOTAL PLAYED: 270.9 hours</div>
+                        <div>LAST PLAYED: Jul 8, 2023</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ELDEN RING -->
+            <div class="game-card">
+                <div class="game-image" style="background-image: url('path-to-elden-ring-image.jpg');"></div>
+                <div class="game-info">
+                    <div class="game-header">
+                        <a href="#" class="game-title">ELDEN RING</a>
+                        <button class="menu-button"><i class="fas fa-ellipsis-h"></i></button>
+                    </div>
+                    <div class="game-stats">
+                        <div>TOTAL PLAYED: 131.9 hours</div>
+                        <div>LAST PLAYED: Sep 8</div>
+                        <div>ACHIEVEMENTS: 42/42</div>
+                    </div>
+                    <div class="achievement-bar">
+                        <div class="achievement-progress" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more games as needed -->
+        </div>
+    </div>
+</body>
+</html>
