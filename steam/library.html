@@ -194,7 +194,9 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="profile-pic"></div>
+            <div class="profile-pic">
+                <img src="https://avatars.cloudflare.steamstatic.com/c816af1f02b10f0d161bdb9820d60847ffc11a73_full.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
             <a href="index.html" style="color: inherit; text-decoration: none;">
                 <h1>DeMariner01</h1>
             </a>
@@ -202,25 +204,20 @@
         </div>
 
         <div class="nav-tabs">
-            <a href="#" class="nav-tab">Recently Played (14)</a>
-            <a href="#" class="nav-tab active">All Games (189)</a>
-            <a href="#" class="nav-tab">Perfect Games (4)</a>
-            <a href="#" class="nav-tab">Followed (1)</a>
-            <a href="#" class="nav-tab">Reviews (1)</a>
+            <a href="#" class="nav-tab" data-category="recently-played">Recently Played (14)</a>
+            <a href="#" class="nav-tab active" data-category="all-games">All Games (189)</a>
+            <a href="#" class="nav-tab" data-category="perfect-games">Perfect Games (4)</a>
+            <a href="#" class="nav-tab" data-category="followed">Followed (1)</a>
+            <a href="#" class="nav-tab" data-category="reviews">Reviews (1)</a>
         </div>
 
         <div class="search-bar">
-            <input type="text" placeholder="Find a game" class="search-input">
-            <div class="sort-options">
-                <button class="sort-button">Playtime</button>
-                <button class="sort-button">Name</button>
-                <button class="sort-button">Achievement Completion</button>
-            </div>
+            <input type="text" placeholder="Find a game" class="search-input" id="searchInput">
         </div>
 
         <div class="game-list">
             <!-- Baldur's Gate 3 -->
-            <div class="game-card">
+            <div class="game-card" data-category="all-games recently-played perfect-games">
                 <div class="game-image" style="background-image: url('https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1086940/header.jpg?t=1725654125');"></div>
                 <div class="game-info">
                     <div class="game-header">
@@ -239,7 +236,7 @@
             </div>
 
             <!-- Undecember -->
-            <div class="game-card">
+            <div class="game-card" data-category="all-games recently-played">
                 <div class="game-image" style="background-image: url('path-to-undecember-image.jpg');"></div>
                 <div class="game-info">
                     <div class="game-header">
@@ -254,7 +251,7 @@
             </div>
 
             <!-- ELDEN RING -->
-            <div class="game-card">
+            <div class="game-card" data-category="all-games perfect-games">
                 <div class="game-image" style="background-image: url('path-to-elden-ring-image.jpg');"></div>
                 <div class="game-info">
                     <div class="game-header">
@@ -272,8 +269,59 @@
                 </div>
             </div>
 
-            <!-- Add more games as needed -->
-        </div>
-    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabs = document.querySelectorAll('.nav-tab');
+            const gameCards = document.querySelectorAll('.game-card');
+            const searchInput = document.getElementById('searchInput');
+
+            // Function to filter game cards by category
+            function filterGames(category) {
+                gameCards.forEach(card => {
+                    if (category === "all-games") {
+                        card.style.display = "flex";
+                    } else {
+                        if (card.dataset.category.includes(category)) {
+                            card.style.display = "flex";
+                        } else {
+                            card.style.display = "none";
+                        }
+                    }
+                });
+            }
+
+            // Function to filter game cards by search input
+            function filterGamesBySearch(query) {
+                gameCards.forEach(card => {
+                    const title = card.querySelector('.game-title').textContent.toLowerCase();
+                    if (title.includes(query.toLowerCase())) {
+                        card.style.display = "flex";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+            }
+
+            // Add click event listener to each tab
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    tabs.forEach(tab => tab.classList.remove('active'));
+                    this.classList.add('active');
+                    const category = this.dataset.category;
+                    filterGames(category);
+                    searchInput.value = ""; // Clear search when tab changes
+                });
+            });
+
+            // Add input event listener to search bar
+            searchInput.addEventListener('input', function () {
+                filterGamesBySearch(this.value);
+            });
+
+            // Initialize with 'all-games' category to show all cards on page load
+            filterGames('all-games');
+        });
+    </script>
 </body>
 </html>
