@@ -214,6 +214,50 @@
         a:active {
             color: inherit; /* Keep the same color on hover, focus, and active states */
         }
+
+        .profile-image {
+            width: 128px;
+            height: 128px;
+            border-radius: 12px; /* Slightly rounded corners for a square look */
+            position: relative;
+            overflow: hidden;
+
+            /* Purple-themed conic gradient border */
+            --border-angle: 0turn;
+            --main-bg: conic-gradient(
+                from var(--border-angle),
+                #221,
+                #150a2a 5%,
+                #150a2a 60%,
+                #221 95%
+            );
+        
+            border: solid 5px transparent;
+            --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #8b5cf6, #a855f7 99%, transparent);
+
+            background: 
+                var(--main-bg) padding-box,
+                var(--gradient-border) border-box,
+                var(--main-bg) border-box;
+
+            background-position: center center;
+
+            /* Animation for spinning effect */
+            animation: purple-spin 3s linear infinite;
+        }
+
+        @keyframes purple-spin {
+            to {
+                --border-angle: 1turn;
+            }
+        }
+
+        @property --border-angle {
+            syntax: "<angle>";
+            inherits: true;
+            initial-value: 0turn;
+        }
+
     </style>
 </head>
 <body>
