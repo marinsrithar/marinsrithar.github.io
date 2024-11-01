@@ -281,7 +281,7 @@
                     </div>
                     <div class="game-stats">
                         <div>TOTAL PLAYED: 288.9 hours</div>
-                        <div>LAST PLAYED: Oct 26</div>
+                        <div>LAST PLAYED: Oct 26, 2024</div>
                         <div>ACHIEVEMENTS: 54/54</div>
                     </div>
                     <div class="achievement-bar">
@@ -306,7 +306,7 @@
             </div>
 
             <!-- ELDEN RING -->
-            <div class="game-card" data-category="all-games perfect-games">
+            <div class="game-card" data-category="all-games perfect-games recently-played">
                 <div class="game-image" style="background-image: url('path-to-elden-ring-image.jpg');"></div>
                 <div class="game-info">
                     <div class="game-header">
@@ -315,7 +315,7 @@
                     </div>
                     <div class="game-stats">
                         <div>TOTAL PLAYED: 131.9 hours</div>
-                        <div>LAST PLAYED: Sep 8</div>
+                        <div>LAST PLAYED: Sep 8, 2024</div>
                         <div>ACHIEVEMENTS: 42/42</div>
                     </div>
                     <div class="achievement-bar">
@@ -323,60 +323,97 @@
                     </div>
                 </div>
             </div>
+            <!-- LETHAL COMPANY -->
+            <div class="game-card" data-category="all-games recently-played">
+                <div class="game-image" style="background-image: url('path-to-elden-ring-image.jpg');"></div>
+                <div class="game-info">
+                    <div class="game-header">
+                        <a href="#" class="game-title">Lethal Company</a>
+                        <button class="menu-button"><i class="fas fa-ellipsis-h"></i></button>
+                    </div>
+                    <div class="game-stats">
+                        <div>TOTAL PLAYED: 29.8 hours</div>
+                        <div>LAST PLAYED: Oct 10, 2024</div>
+                    </div>
+                </div>
+            </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const tabs = document.querySelectorAll('.nav-tab');
-            const gameCards = document.querySelectorAll('.game-card');
-            const searchInput = document.getElementById('searchInput');
+            <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const tabs = document.querySelectorAll('.nav-tab');
+        const gameCards = Array.from(document.querySelectorAll('.game-card'));
+        const gameListContainer = document.querySelector('.game-list');
+        const searchInput = document.getElementById('searchInput');
 
-            // Function to filter game cards by category
-            function filterGames(category) {
-                gameCards.forEach(card => {
-                    if (category === "all-games") {
-                        card.style.display = "flex";
-                    } else {
-                        if (card.dataset.category.includes(category)) {
-                            card.style.display = "flex";
-                        } else {
-                            card.style.display = "none";
-                        }
-                    }
-                });
+        // Parse "TOTAL PLAYED" hours from game stats and return as a number
+        function parseTotalPlayedHours(card) {
+            const totalPlayedText = card.querySelector('.game-stats div:first-child').textContent.replace("TOTAL PLAYED: ", "").trim();
+            const hours = parseFloat(totalPlayedText.split(' ')[0]);
+            return hours;
+        }
+
+        // Function to filter and sort games by category
+        function filterGames(category) {
+            let filteredCards;
+
+            if (category === "all-games") {
+                // Sort all games by total hours played
+                filteredCards = gameCards.sort((a, b) => parseTotalPlayedHours(b) - parseTotalPlayedHours(a));
+            } else if (category === "recently-played") {
+                // Filter by 'recently-played' and sort by "last played" date
+                filteredCards = gameCards
+                    .filter(card => card.dataset.category.includes("recently-played"))
+                    .sort((a, b) => parseLastPlayedDate(b) - parseLastPlayedDate(a));
+            } else {
+                // Filter by other categories
+                filteredCards = gameCards.filter(card => card.dataset.category.includes(category));
             }
 
-            // Function to filter game cards by search input
-            function filterGamesBySearch(query) {
-                gameCards.forEach(card => {
-                    const title = card.querySelector('.game-title').textContent.toLowerCase();
-                    if (title.includes(query.toLowerCase())) {
-                        card.style.display = "flex";
-                    } else {
-                        card.style.display = "none";
-                    }
-                });
-            }
+            // Clear the current game list display
+            gameListContainer.innerHTML = "";
 
-            // Add click event listener to each tab
-            tabs.forEach(tab => {
-                tab.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    tabs.forEach(tab => tab.classList.remove('active'));
-                    this.classList.add('active');
-                    const category = this.dataset.category;
-                    filterGames(category);
-                    searchInput.value = ""; // Clear search when tab changes
-                });
+            // Append only the filtered and sorted cards
+            filteredCards.forEach(card => gameListContainer.appendChild(card));
+        }
+
+        // Parse "LAST PLAYED" date from game stats and return as a Date object
+        function parseLastPlayedDate(card) {
+            const lastPlayedText = card.querySelector('.game-stats div:nth-child(2)').textContent.replace("LAST PLAYED: ", "").trim();
+            return new Date(lastPlayedText);
+        }
+
+        // Function to filter game cards by search input
+        function filterGamesBySearch(query) {
+            gameCards.forEach(card => {
+                const title = card.querySelector('.game-title').textContent.toLowerCase();
+                card.style.display = title.includes(query.toLowerCase()) ? "flex" : "none";
             });
+        }
 
-            // Add input event listener to search bar
-            searchInput.addEventListener('input', function () {
-                filterGamesBySearch(this.value);
+        // Event listener for tab click to filter games by category
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function (event) {
+                event.preventDefault();
+                tabs.forEach(tab => tab.classList.remove('active'));
+                this.classList.add('active');
+                const category = this.dataset.category;
+                filterGames(category);
+                searchInput.value = ""; // Clear search when tab changes
             });
-
-            // Initialize with 'all-games' category to show all cards on page load
-            filterGames('all-games');
         });
-    </script>
+
+        // Event listener for search input to filter games by title
+        searchInput.addEventListener('input', function () {
+            filterGamesBySearch(this.value);
+        });
+
+        // Initialize with 'all-games' category to show all cards on page load
+        filterGames('all-games');
+    });
+</script>
+
+
+
+
 </body>
 </html>
