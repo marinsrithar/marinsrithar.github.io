@@ -4,7 +4,11 @@ body {
     color: #E5E5E5; /* Light text */
     font-family: 'Arial', sans-serif;
 }
-
+html, body {
+  height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
 /* Banner */
 .banner {
     margin-top: 56px; /* Adjust as necessary to match the header's height */
