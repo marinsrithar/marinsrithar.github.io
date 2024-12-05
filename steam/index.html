@@ -5,260 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaming Profile</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #0f172a;
-            color: white;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        /* Profile Header */
-        .profile-header {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .profile-image {
-            width: 128px;
-            height: 128px;
-            border-radius: 12px;
-            border: 2px solid #8b5cf6;
-            position: relative;
-            overflow: hidden;
-            background-color: #1e293b;
-        }
-
-        .profile-image::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(139, 92, 246, 0.2);
-        }
-
-        .profile-info {
-            flex: 1;
-        }
-
-        .profile-name {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .level-badge {
-            background-color: #1e293b;
-            padding: 0.25rem 1rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-        }
-
-        .profile-status {
-            color: #94a3b8;
-            margin-top: 0.5rem;
-        }
-
-        /* Game Section */
-        .game-section {
-            background-color: #1e293b;
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .edit-button {
-            color: #60a5fa;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 0.875rem;
-        }
-
-        .game-content {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .game-image {
-            width: 192px;
-            height: 96px;
-            background-color: #334155;
-            border-radius: 8px;
-        }
-
-        .game-stats {
-            display: flex;
-            gap: 2rem;
-            margin-top: 1rem;
-        }
-
-        .stat-box {
-            text-align: center;
-        }
-
-        .stat-value {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .stat-label {
-            color: #94a3b8;
-            font-size: 0.875rem;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .stat-card {
-            background-color: #1e293b;
-            padding: 1rem;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .stat-card i {
-            color: #94a3b8;
-            font-size: 1.25rem;
-        }
-
-        /* Badges Section */
-        .badges-section {
-            background-color: #1e293b;
-            border-radius: 12px;
-            padding: 1.5rem;
-        }
-
-        .badges-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .badge {
-            aspect-ratio: 1;
-            background-color: #334155;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .badge i {
-            font-size: 1.5rem;
-            color: #94a3b8;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .profile-header {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .profile-name {
-                justify-content: center;
-            }
-
-            .game-content {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .game-stats {
-                justify-content: center;
-            }
-        }
-        footer {
-            text-align: center; /* Center the text */
-        }
-
-        footer a {
-            display: inline-block; /* Make sure the logo is inline-block */
-        }
-        a {
-            color: inherit; /* Inherit color from the parent element */
-            text-decoration: none; /* Remove underline */
-        }
-
-        a:hover,
-        a:focus,
-        a:active {
-            color: inherit; /* Keep the same color on hover, focus, and active states */
-        }
-
-        .profile-image {
-            width: 128px;
-            height: 128px;
-            border-radius: 12px; /* Slightly rounded corners for a square look */
-            position: relative;
-            overflow: hidden;
-
-            /* Purple-themed conic gradient border */
-            --border-angle: 0turn;
-            --main-bg: conic-gradient(
-                from var(--border-angle),
-                #221,
-                #150a2a 5%,
-                #150a2a 60%,
-                #221 95%
-            );
-        
-            border: solid 5px transparent;
-            --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #8b5cf6, #a855f7 99%, transparent);
-
-            background: 
-                var(--main-bg) padding-box,
-                var(--gradient-border) border-box,
-                var(--main-bg) border-box;
-
-            background-position: center center;
-
-            /* Animation for spinning effect */
-            animation: purple-spin 3s linear infinite;
-        }
-
-        @keyframes purple-spin {
-            to {
-                --border-angle: 1turn;
-            }
-        }
-
-        @property --border-angle {
-            syntax: "<angle>";
-            inherits: true;
-            initial-value: 0turn;
-        }
-
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="steam.css">
 </head>
 <body>
     <div class="container">
@@ -346,7 +94,47 @@
                 <div class="badge"><i class="fas fa-medal"></i></div>
             </div>
         </div>
+        <!-- Games Section -->
+        <div class="games-section">
+            <h2>Games</h2>
+            <div class="expandable-cards-container">
+                <div class="expandable-card">
+                    <img class="background" src="https://images.squarespace-cdn.com/content/v1/54e310f0e4b0f4a6ba3ac899/b35b4923-c2fc-4982-b4b4-d0da04967043/Baldur%27s+Gate+3+banner+650.jpg" alt="Game 1">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <div class="card-content">
+                        <h3 class="title">Baldur's Gate 3</h3>
+                    </div>
+                </div>
+                <div class="expandable-card">
+                    <img class="background" src="https://thediscoverer.columbus.edu.co/wp-content/uploads/2022/05/elden-ring-banner-1-1.jpeg" alt="Game 2">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <div class="card-content">
+                        <h3 class="title">Elden Ring</h3>
+                    </div>
+                </div>
+                <div class="expandable-card">
+                    <img class="background" src="https://i.ytimg.com/vi/paXcwjTGDxY/maxresdefault.jpg" alt="Game 3">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <div class="card-content">
+                        <h3 class="title">UNDECEMBER</h3>
+                    </div>
+                </div>
+                <div class="expandable-card">
+                    <img class="background" src="https://images.launchbox-app.com/a9d112c9-9944-4a44-9c48-d8bd5af57d8a.jpg" alt="Game 3">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <div class="card-content">
+                        <h3 class="title">OVERCOOKED 2</h3>
+                    </div>
+                </div>
+                <!-- Add more cards as needed -->
+            </div>
+        </div>
     </div>
+        
+        
+        
+
+
     <footer class="bg-dark text-center text-white py-3">
         <p class="mb-0">
             <a href="../index.html" class="d-inline-block">

@@ -1,0 +1,337 @@
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+background-color: #0f172a;
+color: white;
+line-height: 1.6;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 2rem;
+}
+
+/* Profile Header */
+.profile-header {
+display: flex;
+gap: 2rem;
+margin-bottom: 2rem;
+}
+
+.profile-image {
+width: 128px;
+height: 128px;
+border-radius: 12px;
+border: 2px solid #8b5cf6;
+position: relative;
+overflow: hidden;
+background-color: #1e293b;
+}
+
+.profile-image::after {
+content: '';
+position: absolute;
+inset: 0;
+background: rgba(139, 92, 246, 0.2);
+}
+
+.profile-info {
+flex: 1;
+}
+
+.profile-name {
+display: flex;
+align-items: center;
+gap: 1rem;
+}
+
+.level-badge {
+background-color: #1e293b;
+padding: 0.25rem 1rem;
+border-radius: 9999px;
+font-size: 0.875rem;
+}
+
+.profile-status {
+color: #94a3b8;
+margin-top: 0.5rem;
+}
+
+/* Game Section */
+.game-section {
+background-color: #1e293b;
+border-radius: 12px;
+padding: 1.5rem;
+margin-bottom: 2rem;
+}
+
+.section-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 1.5rem;
+}
+
+.edit-button {
+color: #60a5fa;
+background: none;
+border: none;
+cursor: pointer;
+font-size: 0.875rem;
+}
+
+.game-content {
+display: flex;
+gap: 1.5rem;
+}
+
+.game-image {
+width: 192px;
+height: 96px;
+background-color: #334155;
+border-radius: 8px;
+}
+
+.game-stats {
+display: flex;
+gap: 2rem;
+margin-top: 1rem;
+}
+
+.stat-box {
+text-align: center;
+}
+
+.stat-value {
+font-size: 1.5rem;
+font-weight: bold;
+}
+
+.stat-label {
+color: #94a3b8;
+font-size: 0.875rem;
+}
+
+/* Stats Grid */
+.stats-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 1rem;
+margin-bottom: 2rem;
+}
+
+.stat-card {
+background-color: #1e293b;
+padding: 1rem;
+border-radius: 12px;
+display: flex;
+align-items: center;
+gap: 1rem;
+}
+
+.stat-card i {
+color: #94a3b8;
+font-size: 1.25rem;
+}
+
+/* Badges Section */
+.badges-section {
+background-color: #1e293b;
+border-radius: 12px;
+padding: 1.5rem;
+}
+
+.badges-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+gap: 1rem;
+margin-top: 1rem;
+}
+
+.badge {
+aspect-ratio: 1;
+background-color: #334155;
+border-radius: 8px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.badge i {
+font-size: 1.5rem;
+color: #94a3b8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.profile-header {
+flex-direction: column;
+align-items: center;
+text-align: center;
+}
+
+.profile-name {
+justify-content: center;
+}
+
+.game-content {
+flex-direction: column;
+align-items: center;
+}
+
+.game-stats {
+justify-content: center;
+}
+}
+footer {
+text-align: center; /* Center the text */
+}
+
+footer a {
+display: inline-block; /* Make sure the logo is inline-block */
+}
+a {
+color: inherit; /* Inherit color from the parent element */
+text-decoration: none; /* Remove underline */
+}
+
+a:hover,
+a:focus,
+a:active {
+color: inherit; /* Keep the same color on hover, focus, and active states */
+}
+
+.profile-image {
+width: 128px;
+height: 128px;
+border-radius: 12px; /* Slightly rounded corners for a square look */
+position: relative;
+overflow: hidden;
+
+/* Purple-themed conic gradient border */
+--border-angle: 0turn;
+--main-bg: conic-gradient(
+from var(--border-angle),
+#221,
+#150a2a 5%,
+#150a2a 60%,
+#221 95%
+);
+
+border: solid 5px transparent;
+--gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #8b5cf6, #a855f7 99%, transparent);
+
+background: 
+var(--main-bg) padding-box,
+var(--gradient-border) border-box,
+var(--main-bg) border-box;
+
+background-position: center center;
+
+/* Animation for spinning effect */
+animation: purple-spin 3s linear infinite;
+}
+
+@keyframes purple-spin {
+to {
+--border-angle: 1turn;
+}
+}
+
+@property --border-angle {
+syntax: "<angle>";
+inherits: true;
+initial-value: 0turn;
+}
+/* Expandable Cards Section */
+.expandable-cards-container {
+width: 100%;
+max-width: 1200px;
+margin: 2rem auto; /* Space from other sections */
+padding: 1rem; /* Padding for better layout */
+display: flex;
+gap: 1rem; /* Space between cards */
+}
+
+.expandable-card {
+min-width: 80px;
+height: 340px;
+border-radius: 12px;
+position: relative;
+display: flex;
+align-items: flex-end;
+flex-grow: 1;
+transition: flex-grow 0.5s ease;
+overflow: hidden;
+background-color: #1e293b; /* Matches Steam theme */
+border: 2px solid #334155; /* Optional border */
+}
+
+.expandable-card:hover {
+flex-grow: 7;
+}
+
+.expandable-card .background {
+position: absolute;
+width: 100%;
+height: 100%;
+object-fit: cover;
+z-index: 0;
+filter: brightness(0.7); /* Dim the image slightly */
+}
+
+.expandable-card .card-content {
+position: relative;
+z-index: 1;
+padding: 1rem;
+color: white;
+text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.expandable-card .title {
+font-size: 1.2rem;
+transform: translateX(100%);
+opacity: 0;
+transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.expandable-card:hover .title {
+opacity: 1;
+transform: translateX(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.expandable-cards-container {
+flex-direction: column;
+align-items: center;
+}
+
+.expandable-card {
+min-width: 100%; /* Full-width on smaller screens */
+height: 240px; /* Adjust height for smaller screens */
+}
+.expandable-card .icon {
+position: absolute;
+bottom: 10px; /* Adjust for padding */
+left: 10px; /* Adjust for padding */
+font-size: 24px; /* Size of the icon */
+color: white; /* Icon color */
+text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Subtle shadow for better visibility */
+z-index: 5; /* Ensures it appears on top of the image */
+}
+}
+
+.games-section {
+    background-color: #1e293b;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
