@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎀 Happy Birthday 🎀</title>
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; /* Stack elements vertically */
+      background: linear-gradient(to bottom, #ffeef8, #f8c6d8);
+      color: #d63384;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      height: 100vh;
+      margin: 0; /* Remove default margins */
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      font-size: 0.8rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-top: 2rem;
+    }
+
+    button {
+      background-color: #ff85a1;
+      color: white;
+      border: none;
+      font-size: 1.2rem;
+      padding: 10px 20px;
+      border-radius: 30px;
+      margin-top: 2rem;
+    }
+
+    button:hover {
+      background-color: #ff6c8c;
+    }
+
+    #gift {
+      max-width: 80%;
+      margin: 20px auto;
+    }
+
+    /* Loader */
+    .loader {
+      width: 120px;
+      height: 20px;
+      border-radius: 20px;
+      background: repeating-linear-gradient(135deg, #f03355 0 10px, #ffa516 0 20px) 0/0% no-repeat,
+        repeating-linear-gradient(135deg, #ddd 0 10px, #eee 0 20px) 0/100%;
+      animation: l3 2s infinite;
+      margin: 20px auto;
+    }
+
+    @keyframes l3 {
+      100% {
+        background-size: 100%;
+      }
+    }
+
+    video {
+      margin-top: 20px;
+      max-width: 90%;
+      border-radius: 20px;
+      box-shadow: 0px 0px 20px rgba(255, 85, 125, 0.6);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎀 Happy Birthday Delia! 🎀</h1>
+    <button id="open-gift">Open Your Gift</button>
+
+    <div id="gift-container" class="d-none">
+      <img id="gift" class="d-none" src="gift.gif" alt="Happy Birthday Gift">
+      <!-- Loader bar -->
+      <div id="loader" class="loader d-none"></div>
+      <video id="video" class="d-none" controls>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <footer>
+    Made with 💖 by Marin
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
