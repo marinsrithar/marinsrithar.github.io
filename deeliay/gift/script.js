@@ -25,7 +25,7 @@ document.getElementById("open-gift").addEventListener("click", () => {
     setTimeout(() => {
       loader.classList.add("d-none");
 
-      // Show the video
+      // Show the YouTube video
       video.classList.remove("d-none");
     }, loaderDuration);
   }, gifDuration);
